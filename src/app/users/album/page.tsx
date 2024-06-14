@@ -1,12 +1,15 @@
 import React from 'react'
 import AlbumPage from '@/app/components/users/album/Album'
 import Navbar from '@/app/components/navbar/navbar'
+import { Suspense } from "react";
 
 const Album = () => {
   return (
     <div>
       <Navbar />
-      <AlbumPage />
+      <Suspense>
+        <AlbumPage />
+      </Suspense>
     </div>
   )
 }

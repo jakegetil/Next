@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface post {
@@ -17,7 +17,7 @@ const PostPage = () => {
 
   let url = ''
     if(id){
-        url = "https://jsonplaceholder.typicode.com/posts?userId=" + id
+        url = "https://jsonplaceholder.typicode.com/posts?userId=" + <Suspense>id</Suspense>
     }else{
         url = "https://jsonplaceholder.typicode.com/posts"
     }
@@ -49,7 +49,7 @@ const PostPage = () => {
   return (
     <div>
       <div className="flex justify-center mb-5 text-3xl">
-        <h1>{user} Post</h1>
+        <h1>{userName} Post</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-4">
         {usePost.map((post) => (
