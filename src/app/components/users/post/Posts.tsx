@@ -15,10 +15,11 @@ const PostPage = () => {
   const id = searchParams.get("id");
   const userName = searchParams.get("userName");
 
-  const url = `https://jsonplaceholder.typicode.com/posts?userId=${id}`
-    // id
-    // ? `https://jsonplaceholder.typicode.com/posts?userId=${id}`
-    // : "https://jsonplaceholder.typicode.com/posts";
+  let url = `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+
+  if(!id){
+    url = "https://jsonplaceholder.typicode.com/posts"
+  }
     
   userName ? `${userName}'s` : "";
 
@@ -28,6 +29,7 @@ const PostPage = () => {
     const res = await fetch(
         url
     );
+    console.log(url)
     return res.json();
   }, [url]);
 
