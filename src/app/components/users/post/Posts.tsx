@@ -17,7 +17,7 @@ const PostPage = () => {
 
   let url = ''
     if(id){
-        url = "https://jsonplaceholder.typicode.com/posts?userId=" + <Suspense>id</Suspense>
+        url = "https://jsonplaceholder.typicode.com/posts?userId=" + id
     }else{
         url = "https://jsonplaceholder.typicode.com/posts"
     }
