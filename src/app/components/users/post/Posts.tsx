@@ -15,9 +15,10 @@ const PostPage = () => {
   const id = searchParams.get("id");
   const userName = searchParams.get("userName");
 
-  const url = id
-    ? `https://jsonplaceholder.typicode.com/posts?userId=${id}`
-    : "https://jsonplaceholder.typicode.com/posts";
+  const url = `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+    // id
+    // ? `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+    // : "https://jsonplaceholder.typicode.com/posts";
     
   userName ? `${userName}'s` : "";
 
